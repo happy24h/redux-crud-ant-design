@@ -14,18 +14,18 @@ function Home() {
 
   const columns = [
     {
-      title: "firstName",
+      title: "First name",
       dataIndex: "firstName",
       key: "firstName",
-      render: (text) => <Link>{text}</Link>,
+      // render: (text) => <Link>{text}</Link>,
     },
     {
-      title: "lastName",
+      title: "Last name",
       dataIndex: "lastName",
       key: "lastName",
     },
     {
-      title: "email",
+      title: "Email",
       dataIndex: "email",
       key: "email",
     },
@@ -38,7 +38,13 @@ function Home() {
           <Button type="primary" onClick={() => handleEditUser(record)}>
             Edit
           </Button>
-          <Button onClick={() => handleDeleteUser(record)}>Delete</Button>
+          <Button
+            type="primary"
+            danger
+            onClick={() => handleDeleteUser(record)}
+          >
+            Delete
+          </Button>
         </Space>
       ),
     },
@@ -46,7 +52,9 @@ function Home() {
 
   const handleDeleteUser = (user) => {
     console.log("id delete", user.id);
-    dispatch(userDelete(user.id));
+    if (window.confirm("Bạn có chắc chắn muốn xóa người dùng không ?")) {
+      dispatch(userDelete(user.id));
+    }
   };
 
   const handleEditUser = (user) => {
@@ -60,7 +68,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <Form.Item label=" ">
         <Link to={"/add-user"}>
           <Button
