@@ -1,0 +1,27 @@
+.input-user {
+  margin: 15px ;
+}
+
+.btn-add {
+  position: relative;
+  left: 11px;
+  margin: 0 auto;
+  display: flex;
+   
+}
+
+.btn-back {
+  background-color: #9254de;
+  color: #fff;
+  position: relative;
+  left: 11px;
+  margin: 0 auto;
+  display: flex;
+  
+}
+
+.btn-back:hover {
+  border: 1px solid #9254de;
+  color: #9254de;
+
+}
