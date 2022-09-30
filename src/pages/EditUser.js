@@ -111,7 +111,7 @@ function EditUser() {
           htmlType="submit"
           onClick={handleSubmit}
         >
-          Add User
+          Update
         </Button>
       </Form>
     </div>

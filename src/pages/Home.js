@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listUsers, userDelete } from "../redux/actions";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+// import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 
 function Home() {
   let dispatch = useDispatch();
@@ -36,17 +36,16 @@ function Home() {
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <Button type="primary" ghost onClick={() => handleEditUser(record)}>
-            <EditOutlined />
+          <Button type="primary" onClick={() => handleEditUser(record)}>
+            {/* <EditOutlined /> */}
             Edit
           </Button>
           <Button
             type="primary"
             danger
-            ghost
             onClick={() => handleDeleteUser(record)}
           >
-            <DeleteOutlined />
+            {/* <DeleteOutlined /> */}
             Delete
           </Button>
         </Space>
